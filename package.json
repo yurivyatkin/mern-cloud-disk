@@ -1,0 +1,21 @@
+{
+  "name": "mern-cloud-disk",
+  "version": "0.0.1",
+  "private":"true",
+  "description": "A fullstack Cloud Storage app on MERN stack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mongodb",
+    "express",
+    "react",
+    "node",
+    "tutorial",
+    "example",
+    "learning"
+  ],
+  "author": "Yuri Vyatkin",
+  "license": "ISC"
+}
