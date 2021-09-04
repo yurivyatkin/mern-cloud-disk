@@ -3,10 +3,15 @@ const config = require('config');
 const express = require('express');
 const mongoose = require('mongoose');
 
-const app = express();
+const authRouter = require('./routes/auth.routes');
 
 const PORT = config.get('serverPort');
 const uri = config.get('dbUrl');
+
+const app = express();
+
+app.use(express.json());
+app.use('/api/auth', authRouter);
 
 const start = async () => {
   try {
