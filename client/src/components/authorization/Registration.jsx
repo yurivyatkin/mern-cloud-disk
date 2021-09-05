@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './registration.css';
+import './authorization.css';
 import Input from '../input/Input';
 import { registration } from '../../actions/user';
 
@@ -8,25 +8,25 @@ const Registration = () => {
   const [password, setPassword] = useState('');
 
   return (
-    <div className="registration">
-      <div className="registration__header">Регистрация</div>
+    <div className="authorization">
+      <div className="authorization__header">Register new user</div>
       <Input
         value={email}
         setValue={setEmail}
         type="text"
-        placeholder="Введите email..."
+        placeholder="Enter email..."
       />
       <Input
         value={password}
         setValue={setPassword}
         type="password"
-        placeholder="Введите пароль..."
+        placeholder="Enter password..."
       />
       <button
-        className="registration__btn"
+        className="authorization__btn"
         onClick={() => registration(email, password)}
       >
-        Войти
+        Register
       </button>
     </div>
   );

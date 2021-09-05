@@ -1,7 +1,7 @@
 import Navbar from './navbar/Navbar';
 import './app.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Registration from './registration/Registration';
+import Registration from './authorization/Registration';
 
 function App() {
   return (
