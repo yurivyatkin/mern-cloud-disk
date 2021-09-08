@@ -10,7 +10,7 @@ export function getFiles(dirId) {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
         }
       );
-      console.log('getFiles response.data', response.data);
+      // console.log('getFiles response.data', response.data);
       dispatch(setFiles(response.data.files));
     } catch (e) {
       // alert(e.response.data.message);
