@@ -12,7 +12,8 @@ export const registration = async (email, password) => {
     );
     alert(response.data.message);
   } catch (e) {
-    alert(e.response.data.message);
+    // alert(e.response.data.message);
+    console.log('actions/user/registration', e);
   }
 };
 
@@ -32,7 +33,8 @@ export const login = (email, password) => {
       dispatch(setUser(response.data.user));
       localStorage.setItem('token', response.data.token);
     } catch (e) {
-      alert(e.response.data.message);
+      // alert(e.response.data.message);
+      console.log('actions/user/login', e);
     }
   };
 };
@@ -46,7 +48,8 @@ export const auth = () => {
       dispatch(setUser(response.data.user));
       localStorage.setItem('token', response.data.token);
     } catch (e) {
-      alert(e.response.data.message);
+      // alert(e.response.data.message);
+      console.log('actions/user/auth', e);
       localStorage.removeItem('token');
     }
   };
