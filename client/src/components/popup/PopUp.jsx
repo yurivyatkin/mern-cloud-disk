@@ -6,6 +6,8 @@ import Input from '../input/Input';
 import { setPopupDisplay } from '../../reducers/fileReducer';
 import { createDir } from '../../actions/file';
 
+import './popup.css';
+
 const Popup = () => {
   const [dirName, setDirName] = useState('');
   const popupDisplay = useSelector((state) => state.files.popupDisplay);
