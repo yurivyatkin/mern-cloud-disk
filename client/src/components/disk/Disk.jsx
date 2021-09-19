@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import FileList from './fileList/FileList';
 import PopUp from '../popup/PopUp';
+import Uploader from './fileList/uploader/Uploader';
 
 import { getFiles, uploadFile } from '../../actions/file';
 import { setCurrentDir, setPopupDisplay } from '../../reducers/fileReducer';
@@ -82,6 +83,7 @@ const Disk = () => {
       </div>
       <FileList />
       <PopUp />
+      <Uploader />
     </div>
   ) : (
     <div
