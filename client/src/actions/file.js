@@ -5,10 +5,12 @@ import {
   changeUploadFile,
   showUploader,
 } from '../reducers/uploadReducer';
+import { hideLoader, showLoader } from '../reducers/appReducer';
 
 export function getFiles(dirId, sort) {
   return async (dispatch) => {
     try {
+      dispatch(showLoader());
       let url = `http://localhost:5000/api/files`;
       if (dirId) {
         url = `http://localhost:5000/api/files?parent=${dirId}`;
@@ -27,6 +29,8 @@ export function getFiles(dirId, sort) {
     } catch (e) {
       // alert(e.response.data.message);
       console.log('actions/file/getFiles', e);
+    } finally {
+      dispatch(hideLoader());
     }
   };
 }
