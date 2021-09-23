@@ -16,6 +16,9 @@
   cursor: pointer;
   margin-left: 10px;
 }
+.disk__select {
+  margin-left: auto;
+}
 .drop-area {
   width: 100%;
   height: calc(100vh - 50px - 40px);
