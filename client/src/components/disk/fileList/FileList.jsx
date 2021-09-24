@@ -10,6 +10,10 @@ const FileList = () => {
   // state.files by default is set to [] and with getFiles is set to data.files from the response
   const fileList = useSelector((state) => state.files.files);
 
+  if (fileList.length === 0) {
+    return <div className="loader">Files not found</div>;
+  }
+
   return (
     <div className="filelist">
       <div className="filelist__header">
