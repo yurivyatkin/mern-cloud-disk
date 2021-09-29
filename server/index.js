@@ -11,12 +11,14 @@ const corsMiddleware = require('./middleware/cors.middleware');
 
 const PORT = config.get('serverPort');
 const uri = config.get('dbUrl');
+const staticPath = config.get('staticPath');
 
 const app = express();
 
 app.use(fileUpload({}));
 app.use(corsMiddleware);
 app.use(express.json());
+app.use(express.static(staticPath));
 app.use('/api/auth', authRouter);
 app.use('/api/files', fileRouter);
 
