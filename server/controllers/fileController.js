@@ -183,10 +183,23 @@ class FileController {
       file.mv(config.get('staticPath') + sep + avatarName);
       user.avatar = avatarName;
       await user.save();
-      return res.json({ message: 'Avatar was uploaded' });
+      return res.json(user);
     } catch (e) {
       console.log(e);
-      return res.status(400).json({ message: 'Upload avatar error' });
+      return res.status(400).json({ message: 'Error uploading avatar' });
+    }
+  }
+
+  async deleteAvatar(req, res) {
+    try {
+      const user = await User.findById(req.user.id);
+      fs.unlinkSync(config.get('staticPath') + sep + user.avatar);
+      user.avatar = null;
+      await user.save();
+      return res.json(user);
+    } catch (e) {
+      console.log(e);
+      return res.status(400).json({ message: 'Error deleting avatar' });
     }
   }
 }
