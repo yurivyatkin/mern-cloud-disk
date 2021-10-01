@@ -17,7 +17,7 @@ const Profile = () => {
         accept="image/*"
         onChange={(e) => changeHandler(e)}
         type="file"
-        placeholder="Загрузить аватар"
+        placeholder="Upload avatar"
       />
     </div>
   );
